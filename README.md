@@ -18,6 +18,7 @@ This script demonstrates how to create a 1inch Fusion swap order on the Ethereum
     ```bash
     export DEV_PORTAL_KEY='your_api_key_here'
     ```
+5.  **Token approval:** You will need to approve tokens to the [Permit2 address](https://github.com/Uniswap/sdks/blob/d59765c2ceada19b55ccd3e8a444c99decc1b6bd/sdks/permit2-sdk/src/constants.ts#L4) before this will work. 
 
 ## Configuration
 
