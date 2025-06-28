@@ -40,8 +40,8 @@ async function restOfLogic(pkey) {
     const thirtyMinutes = 30 * 60 * 1000;
     const permit2 = new ethers.Contract(Permit2SDK.PERMIT2_ADDRESS, PERMIT2_ABI, signer);
 
-    // allowance(token, owner, spender); see below:
-    const data = await permit2.allowance.staticCall(USDC,signer.address,ONE_INCH_ROUTER);
+    // allowance(owner,token, spender); see below:
+    const data = await permit2.allowance.staticCall(signer.address,USDC,ONE_INCH_ROUTER);
     let { amount, expiration, nonce } = data;
     console.log(`Amount: ${amount}, Expiration: ${expiration}, Nonce: ${nonce.toString()}`);
     let deadline = toDeadline(thirtyMinutes);
